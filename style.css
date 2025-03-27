@@ -1,0 +1,148 @@
+/******************************************************************************
+The style rules in this sheet apply to the origin version of the site
+******************************************************************************/
+
+/* Our default values set as CSS variables */
+:root {
+  --color-bg: #f4eeec;
+  --color-bg-alt: #e7ff7a;
+  --color-text-main: #000000;
+  --wrapper-height: 100vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: sans-serif;
+  --color-header: #4aa800;
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  color: var(--color-text-main);
+  font-size:large;
+}
+
+/* Page structure */
+.wrapper {
+  min-height: var(--wrapper-height);
+  background-color: var(--color-bg);
+  place-items: center;
+  margin: 0;
+  padding-left:0.5rem;
+  padding-right:0.5rem;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Very light scaling for our illustration */
+.title,
+h1 {
+  color: var(--color-header);
+  font-family: var(--font-family);
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom:0.5em;
+  margin-top:3rem;
+}
+
+/* 🌍 Avatar differs between origin and edge 🌎 */
+.avatar {
+  width: 10rem;
+  height: 10rem;
+  background-image: url(https://cdn.glitch.global/336bf4b2-0bcf-47e7-bb9b-f895f956d5cb/1f6a7.svg?v=1720540337691);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top:1rem;
+  margin-bottom:1rem;
+}
+
+/* File opening only shows in origin */
+.fileopener {
+  cursor: pointer;
+  color: var(--color-header);
+  font-weight: bold;
+  border-bottom: 3px solid var(--color-header);
+}
+.fileopener:hover {
+  color: var(--color-bg-alt);
+  border-bottom: 3px solid var(--color-bg-alt);
+  background-color: var(--color-text-main);
+}
+
+/* 🚨 Hide content with "edge" class name at the origin 🚨 */
+.edge {
+  display: none;
+}
+
+.origin {
+  text-align:center;
+}
+
+.cta {
+  margin-top:1rem;
+  padding-bottom:5px;
+}
+a.remix:hover {
+  background-color:#f6e6f3;
+}
+
+/* ⚠️ Location indicator ⚠️ */
+location-indicator {
+  color:var(--color-header);
+  font-weight:bold;
+  text-align:center;
+  padding:1rem; 
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto 0;
+  padding: 1.5rem 0 0.75rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+}
+/* Remix button styles */
+.btn--remix {
+  font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;
+  padding: 0.8rem 1.75rem;
+  /*font sizes scaled by viewport https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/*/
+  font-size: clamp(0.9rem, 0.825rem + 0.3333vw, 1rem);
+  line-height: 1rem;
+  font-weight: 500;
+  height: 3rem;
+  align-items: center;
+  cursor: pointer;
+  background: #ffffff;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #4d1935;
+  white-space: nowrap;
+  flex-grow: 1;
+  text-align: center;
+}
+.btn--remix img {
+  position: relative;
+  top: 1px;
+  margin-right: 0.25rem;
+}
+.btn--remix:hover,
+.btn--remix:focus {
+  background-color: var(--color-bg-alt);
+}
+.bonus {
+  display:none;
+}
