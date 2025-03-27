@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--    <link rel="icon" href="https://glitch.com/favicon.ico" />-->
+
+    <meta property="og:title" content="Learn edge computing" />
+    <meta property="og:description" content="Learn how to code a compute app" />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.global/336bf4b2-0bcf-47e7-bb9b-f895f956d5cb/1f30d.svg?v=1720540341072"
+    />
+    <link rel="me" href="https://glitch.com/@fastlysue" />
+    
+    <title>Hello Compute!</title>
+    <script src="/helpers.js" defer></script>
+    <!-- LOCATION INDICATOR -->
+    <script src="/where.js" type="module"></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- We show and hide elements depending on the stylesheet selected -->
+        <h1 class="origin">This is the Origin!</h1>
+        <h1 class="edge">This is the Edge!</h1>
+
+        <!-- Notice that the image is different at origin / edge, it's the CSS -->
+        <div class="avatar"></div>
+
+        <!-- We use a web component in where.js -->
+        <!-- From vite.config.js at the origin or edge/src/index.js at the edge -->
+        <location-indicator>{{origin}}</location-indicator>
+
+        <!-- Section will display when you complete step 4 in the README -->
+        <div class="bonus">
+          <strong>This is bonus content OMG you won a prize!!! 🎁🎁🎁</strong>
+        </div>
+
+        <div class="cta">
+          <div class="edge">
+            <strong>Make changes to your compute code and deploy 🚀</strong>
+          </div>
+          <!--
+          <div class="origin">
+            <!-- We use special links to open files in the Glitch editor -->
+            <strong>
+              Edit the
+              <span class="fileopener" data-file="index.html" data-line="15"
+                >origin</span
+              >
+              and
+              <span
+                class="fileopener"
+                data-file="edge/src/index.js"
+                data-line="5"
+                >compute</span
+              >
+              code in Glitch ✏️
+            </strong>
+          </div>
+          -->
+          <!--
+          <footer class="footer">
+            <a
+              class="btn--remix"
+              target="_top"
+              href="https://glitch.com/edit/#!/remix/learn-edge-computing"
+            >
+              <img
+                src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
+                alt=""
+              />
+              Remix your own site
+            </a>
+          </footer>-->
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
