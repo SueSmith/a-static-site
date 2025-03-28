@@ -1,0 +1,21 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "portsAttributes": {
+        "3000": {
+            "label": "Website",
+            "onAutoForward": "openPreview"
+        },
+        "7676": {
+            "label": "Compute",
+            "onAutoForward": "openPreview"
+        }
+    },
+    "postStartCommand": "npx @fastly/cli compute serve",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.live-server"
+            ]
+        }
+    }
+}

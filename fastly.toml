@@ -1,0 +1,20 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://www.fastly.com/documentation/reference/compute/fastly-toml
+
+authors = [""]
+cloned_from = "https://github.com/fastly/compute-starter-kit-javascript-default"
+description = ""
+language = "javascript"
+manifest_version = 3
+name = "a-static-site"
+service_id = ""
+
+[scripts]
+  build = "npm run build"
+  post_init = "npm install"
+
+[local_server]
+  [local_server.backends]
+    [local_server.backends.site]
+      url = "https://suesmith.github.io/"
+      override_host = "suesmith.github.io"
