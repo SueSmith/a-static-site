@@ -1,0 +1,27 @@
+{
+  "name": "learn-edge-computing",
+  "version": "0.0.1",
+  "description": "Learn how to add edge compute to your site.",
+  "scripts": {
+    "start": "node setup && vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "publish": "node setup && vite build && cd edge && fastly purge --all ; fastly compute build && fastly compute deploy --domain=$PROJECT_DOMAIN.edgecompute.app --accept-defaults",
+    "deactivate": "cd edge && fastly service-version deactivate --version=latest"
+  },
+  "devDependencies": {
+    "@fastly/js-compute": "^1.7.1",
+    "vite": "^4.0.0",
+    "vite-plugin-handlebars": "^1.6.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead"
+  ],
+  "engines": {
+    "node": "16.x"
+  },
+  "dependencies": {
+    "geoip-lite": "^1.4.10"
+  }
+}
