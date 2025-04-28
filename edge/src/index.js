@@ -64,14 +64,14 @@ async function handleRequest(_event) {
   });
 
   // We can find out which pop delivered the response
-  let pop = backendResponse.headers.get("x-served-by");
-  pop = pop.substring(pop.lastIndexOf("-") + 1);
+//  let pop = backendResponse.headers.get("x-served-by");
+//  pop = pop.substring(pop.lastIndexOf("-") + 1);
 
   // Tell the user about how this response was delivered with a cookie
   backendResponse.headers.set(
     "Set-Cookie",
     "location=This reponse was delivered by the Fastly " +
-      pop +
+  //    pop +
       " POP for a request from " +
       where +
       "; SameSite=None; Secure"

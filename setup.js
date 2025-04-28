@@ -27,7 +27,7 @@ name = "` +
 
 [setup.backends."github"] 
   address = "` +
-        process.env.GITHUB_USER + `.github.io`"
+        process.env.GITHUB_USER + `.github.io"
   description = "GitHub backend"
   port = 443`
     );

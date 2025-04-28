@@ -5,24 +5,24 @@ import handlebars from "vite-plugin-handlebars";
 const geoip = require("geoip-lite");
 const { Resolver } = require("node:dns").promises;
 const resolver = new Resolver();
-
+/*
 let getip = async function () {
   const addresses = await resolver.resolve4(
-    "http://" + process.env.GITHUB_USER + ".glitch.me/" + process.env.GITHUB_REPOSITORY
+    "http://" + process.env.GITHUB_USER + ".glitch.me/" + process.env.GITHUB_REPOSITORY.split("/")[1]
   );
   let geoinfo = geoip.lookup(addresses[0]);
   return (
     "This website is being served from " + geoinfo.city + " " + geoinfo.country 
   );
 };
-
+*/
 // https://vitejs.dev/config/
 export default defineConfig(async ({ command, mode }) => {
   return {
     plugins: [
       handlebars({
         context: {
-          origin: await getip(),
+          origin: "hiya"//await getip(),
         },
       }),
     ],
